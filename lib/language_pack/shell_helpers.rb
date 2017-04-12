@@ -110,6 +110,9 @@ module LanguagePack
     # (indented by 6 spaces)
     # @param [String] message to be displayed
     def puts(message)
+      super "######################"
+      super message.scrub('?')
+      super "message"
       message.to_s.split("\n").each do |line|
         super "       #{line.strip}"
       end
